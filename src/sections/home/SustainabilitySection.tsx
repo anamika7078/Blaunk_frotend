@@ -1,6 +1,10 @@
+
+
 export default function SustainabilitySection() {
   return (
     <section className="bg-[#f5f2d8] rounded-xl p-6 md:p-10">
+
+
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 

@@ -1,8 +1,11 @@
 import { ArrowRight } from "lucide-react";
 
+
 export default function CTASection() {
   return (
     <section className="w-full mt-6 px-5">
+
+
       <div className="relative h-[300px] sm:h-[350px] rounded-xl overflow-hidden">
 
         <img
@@ -28,13 +31,13 @@ export default function CTASection() {
           </p>
 
           <button className="flex bg-white text-black px-6 py-3 rounded-md font-semibold w-fit">
-           <span>
-            
-             Learn More 
+            <span>
+
+              Learn More
             </span>
             <span>
 
-             <ArrowRight />
+              <ArrowRight />
             </span>
           </button>
         </div>

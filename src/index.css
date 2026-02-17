@@ -76,3 +76,33 @@
 .animate-text-glow {
   animation: text-glow 1.5s infinite alternate;
 }
+
+/* Horizontal Scroll Animation for Advertisement */
+@keyframes horizontal-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-horizontal-scroll {
+  animation: horizontal-scroll 20s linear infinite;
+}
+
+/* Slow Spin Animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}

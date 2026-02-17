@@ -125,6 +125,26 @@ export default function Login() {
               {!loading && <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />}
             </button>
           </form>
+
+          {/* Demo Credentials Reference */}
+          <div className="mt-6 p-4 bg-[#d2a437]/10 border border-[#d2a437]/30 rounded-2xl">
+            <div className="flex items-start gap-3">
+              <div className="p-2 bg-[#d2a437]/20 rounded-lg">
+                <ShieldCheck size={16} className="text-[#d2a437]" />
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-black text-[#d2a437] uppercase tracking-widest mb-2">Demo Credentials</p>
+                <div className="space-y-1">
+                  <p className="text-xs text-gray-300 font-mono">
+                    <span className="text-gray-500">Email:</span> admin@blaunk.com
+                  </p>
+                  <p className="text-xs text-gray-300 font-mono">
+                    <span className="text-gray-500">Password:</span> password123
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Footer Info */}

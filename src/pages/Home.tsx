@@ -14,6 +14,9 @@ import LogisticsHeroSection from "../sections/home/LogisticsHeroSection";
 import MarketInsightsSection from "../sections/home/MarketInsightsSection";
 import SustainabilitySection from "../sections/home/SustainabilitySection";
 import TestimonialSection from "../sections/home/TestimonialSection";
+import AdvertisementBanner from "../components/AdvertisementBanner";
+import StatsSection from "../sections/home/StatsSection";
+
 
 export default function Home() {
   useEffect(() => {
@@ -30,20 +33,38 @@ export default function Home() {
 
   return (
     <>
+      {/* <AdvertisementBanner variant="accent" animation="scroll" /> */}
       <HeroSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <CTASection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <MarketInsightsSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <CategorySection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <LogisticsHeroSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <LogisticsExcellenceSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <CuratedCollectionsSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <BlaunkStoreSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <SustainabilitySection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <LimitedEdition />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <GourmetPatisserieSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <HospitalitySliderSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <TestimonialSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
       <CountryServiceSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
+      <StatsSection />
+      <AdvertisementBanner variant="accent" animation="scroll" />
+
     </>
   );
 }

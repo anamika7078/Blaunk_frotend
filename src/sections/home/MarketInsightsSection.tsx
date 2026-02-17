@@ -1,6 +1,10 @@
+
+
 export default function MarketInsightsSection() {
   return (
     <section className="bg-[#f3f4f1] rounded-xl p-6 md:p-8 mt-8">
+
+
 
       <div className="bg-[#6b7b1e] text-white text-center text-xs md:text-sm font-semibold py-2 rounded-md mb-6 tracking-wide">
         INDIAN BIZ REGISTERED MARKET PLACE DIRECT SOURCE FROM MANUFACTURER & WHOLESALER

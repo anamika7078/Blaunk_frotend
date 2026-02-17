@@ -1,7 +1,9 @@
+
+
 const categories = [
   { name: "ELECTRONICS", img: "https://images.unsplash.com/photo-1518770660439-4636190af475" },
   { name: "AGRI", img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6" },
-  { name: "INDUSTRIAL", img: "https://images.unsplash.com/photo-1581092335397-9583eb92d232" },
+  { name: "MANUFACTURAL", img: "https://images.unsplash.com/photo-1581092335397-9583eb92d232" },
   { name: "MEDICAL", img: "https://images.unsplash.com/photo-1582750433449-648ed127bb54" },
   { name: "TEXTILE", img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" },
   { name: "KITCHEN", img: "https://images.unsplash.com/photo-1556911220-bff31c812dba" },
@@ -14,13 +16,15 @@ export default function CategorySection() {
   return (
     <section className="md:p-10">
 
+
+
       <div className="flex justify-between items-center mb-8">
         <div>
           <p className="text-sm text-[#7b8464] font-semibold">
             A SERVICE TO EVERY INDIAN MARKET PLACE
           </p>
           <h2 className="text-2xl md:text-3xl font-bold mt-2 text-[#111]">
-            Indian BIZ Registered Market Place. Direct Source From Manufacture & Wholesale
+            Indian BIZ Registered Market Place. Direct Source From Manufacturer & Wholesaler
           </h2>
         </div>
       </div>

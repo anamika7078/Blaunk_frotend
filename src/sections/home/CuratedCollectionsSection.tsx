@@ -1,3 +1,5 @@
+
+
 const cards = [
   {
     title: "MAN WEAR",
@@ -16,6 +18,8 @@ const cards = [
 export default function CuratedCollectionsSection() {
   return (
     <section className="bg-[#f3f4f1] rounded-xl p-6 md:p-10 mt-8">
+
+
 
       <div className="mb-8">
         <p className="text-sm text-[#7b8464] font-semibold">
