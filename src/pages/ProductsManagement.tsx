@@ -86,12 +86,12 @@ export default function ProductsManagement() {
     };
 
     return (
-        <div className="p-8">
+        <div className="p-4 sm:p-8">
             {/* Header */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 sm:mb-10">
                 <div>
-                    <h1 className="text-4xl font-black text-[#1f2918] tracking-tight">Products Inventory</h1>
-                    <p className="text-gray-500 font-medium">Manage your global catalog and inventory levels.</p>
+                    <h1 className="text-2xl sm:text-4xl font-black text-[#1f2918] tracking-tight">Products Inventory</h1>
+                    <p className="text-gray-500 font-medium text-sm sm:text-base">Manage your global catalog and inventory levels.</p>
                 </div>
                 <button
                     onClick={() => {
@@ -105,7 +105,7 @@ export default function ProductsManagement() {
                         });
                         setIsModalOpen(true);
                     }}
-                    className="bg-[#d2a437] text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-[#d2a437]/20 hover:bg-black transition-all flex items-center gap-3"
+                    className="w-full sm:w-auto bg-[#d2a437] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-black text-[10px] sm:text-xs uppercase tracking-widest shadow-xl shadow-[#d2a437]/20 hover:bg-black transition-all flex items-center justify-center gap-3"
                 >
                     <Plus size={20} />
                     Add New Product
@@ -161,8 +161,8 @@ export default function ProductsManagement() {
                                             <button
                                                 onClick={() => handleToggleActive(product)}
                                                 className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${product.isActive
-                                                        ? "bg-emerald-50 text-emerald-600 border border-emerald-100"
-                                                        : "bg-red-50 text-red-600 border border-red-100"
+                                                    ? "bg-emerald-50 text-emerald-600 border border-emerald-100"
+                                                    : "bg-red-50 text-red-600 border border-red-100"
                                                     }`}
                                             >
                                                 {product.isActive ? <Eye size={12} /> : <EyeOff size={12} />}
@@ -198,24 +198,24 @@ export default function ProductsManagement() {
 
             {/* Product Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsModalOpen(false)} />
-                    <div className="bg-white w-full max-w-2xl rounded-[40px] shadow-2xl relative z-10 overflow-hidden animate-gpu">
-                        <div className="p-8 border-b border-gray-50 flex items-center justify-between bg-[#f8f9fa]">
+                    <div className="bg-white w-full max-w-2xl rounded-[30px] sm:rounded-[40px] shadow-2xl relative z-10 overflow-hidden animate-gpu">
+                        <div className="p-6 sm:p-8 border-b border-gray-50 flex items-center justify-between bg-[#f8f9fa]">
                             <div>
-                                <h2 className="text-2xl font-black text-[#1f2918]">{currentProduct?._id ? "Edit Product" : "Add New Item"}</h2>
-                                <p className="text-xs text-gray-500 font-bold uppercase tracking-[0.2em] mt-1">Product Configuration Module</p>
+                                <h2 className="text-xl sm:text-2xl font-black text-[#1f2918]">{currentProduct?._id ? "Edit Product" : "Add New Item"}</h2>
+                                <p className="text-[9px] sm:text-xs text-gray-500 font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mt-1">Product Configuration Module</p>
                             </div>
                             <button
                                 onClick={() => setIsModalOpen(false)}
-                                className="p-3 bg-white rounded-2xl text-gray-400 hover:text-black shadow-sm"
+                                className="p-2 sm:p-3 bg-white rounded-xl sm:rounded-2xl text-gray-400 hover:text-black shadow-sm"
                             >
                                 <X size={20} />
                             </button>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="p-8 space-y-6 max-h-[70vh] overflow-y-auto hide-scrollbar">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-4 sm:space-y-6 max-h-[75vh] overflow-y-auto hide-scrollbar">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest pl-1">Product Name</label>
                                     <input
@@ -223,7 +223,7 @@ export default function ProductsManagement() {
                                         required
                                         value={currentProduct?.name || ""}
                                         onChange={(e) => setCurrentProduct({ ...currentProduct, name: e.target.value })}
-                                        className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-2xl p-4 text-sm font-bold transition-all outline-none"
+                                        className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-sm font-bold transition-all outline-none"
                                         placeholder="E.g. Vintage Leather Watch"
                                     />
                                 </div>
@@ -234,7 +234,7 @@ export default function ProductsManagement() {
                                         required
                                         value={currentProduct?.price || ""}
                                         onChange={(e) => setCurrentProduct({ ...currentProduct, price: Number(e.target.value) })}
-                                        className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-2xl p-4 text-sm font-bold transition-all outline-none"
+                                        className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-sm font-bold transition-all outline-none"
                                         placeholder="0.00"
                                     />
                                 </div>
@@ -245,7 +245,7 @@ export default function ProductsManagement() {
                                 <select
                                     value={currentProduct?.category || ""}
                                     onChange={(e) => setCurrentProduct({ ...currentProduct, category: e.target.value })}
-                                    className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-2xl p-4 text-sm font-bold transition-all outline-none"
+                                    className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-sm font-bold transition-all outline-none"
                                 >
                                     <option value="Cakes">Cakes & Bakes</option>
                                     <option value="Electronics">Electronics</option>
@@ -260,7 +260,7 @@ export default function ProductsManagement() {
                                 <textarea
                                     value={currentProduct?.description || ""}
                                     onChange={(e) => setCurrentProduct({ ...currentProduct, description: e.target.value })}
-                                    className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-2xl p-4 text-sm font-medium transition-all outline-none min-h-[120px]"
+                                    className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-sm font-medium transition-all outline-none min-h-[100px] sm:min-h-[120px]"
                                     placeholder="Tell us about the product..."
                                 />
                             </div>
@@ -275,12 +275,12 @@ export default function ProductsManagement() {
                                         ...currentProduct,
                                         images: [{ url: e.target.value }]
                                     })}
-                                    className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-2xl p-4 text-sm font-medium transition-all outline-none"
+                                    className="w-full bg-gray-50 border border-transparent focus:border-[#d2a437]/30 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-sm font-medium transition-all outline-none"
                                     placeholder="https://images.unsplash.com/..."
                                 />
                             </div>
 
-                            <div className="flex items-center gap-6 pt-4">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-2 sm:pt-4">
                                 <label className="flex items-center gap-3 cursor-pointer group">
                                     <input
                                         type="checkbox"
@@ -288,7 +288,7 @@ export default function ProductsManagement() {
                                         onChange={(e) => setCurrentProduct({ ...currentProduct, isActive: e.target.checked })}
                                         className="w-5 h-5 rounded-lg border-gray-200 text-[#d2a437] focus:ring-[#d2a437]/30"
                                     />
-                                    <span className="text-xs font-black text-gray-500 uppercase tracking-widest">Mark as Active</span>
+                                    <span className="text-[10px] sm:text-xs font-black text-gray-500 uppercase tracking-widest">Mark as Active</span>
                                 </label>
                                 <label className="flex items-center gap-3 cursor-pointer group">
                                     <input
@@ -297,22 +297,22 @@ export default function ProductsManagement() {
                                         onChange={(e) => setCurrentProduct({ ...currentProduct, isFeatured: e.target.checked })}
                                         className="w-5 h-5 rounded-lg border-gray-200 text-[#d2a437] focus:ring-[#d2a437]/30"
                                     />
-                                    <span className="text-xs font-black text-gray-500 uppercase tracking-widest">Featured Item</span>
+                                    <span className="text-[10px] sm:text-xs font-black text-gray-500 uppercase tracking-widest">Featured Item</span>
                                 </label>
                             </div>
 
-                            <div className="pt-8 flex gap-4">
+                            <div className="pt-6 sm:pt-8 flex flex-col-reverse sm:flex-row gap-3 sm:gap-4">
                                 <button
                                     type="button"
                                     onClick={() => setIsModalOpen(false)}
-                                    className="flex-1 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest border-2 border-gray-100 text-gray-400 hover:bg-gray-50 transition-all"
+                                    className="w-full sm:flex-1 px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-black text-[10px] sm:text-xs uppercase tracking-widest border-2 border-gray-100 text-gray-400 hover:bg-gray-50 transition-all"
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     type="submit"
                                     disabled={formLoading}
-                                    className="flex-[2] bg-[#1f2918] text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl hover:bg-black transition-all disabled:opacity-50 flex items-center justify-center gap-3"
+                                    className="w-full sm:flex-[2] bg-[#1f2918] text-white px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-black text-[10px] sm:text-xs uppercase tracking-widest shadow-xl hover:bg-black transition-all disabled:opacity-50 flex items-center justify-center gap-3"
                                 >
                                     {formLoading ? <Loader2 size={18} className="animate-spin" /> : currentProduct?._id ? "Update Product" : "Save Product"}
                                 </button>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Sparkles, TrendingUp, Zap } from 'lucide-react';
-import api from '../services/api';
+import { getAds } from '../services/adService';
 
 interface AdvertisementBannerProps {
     variant?: 'primary' | 'secondary' | 'accent' | 'orange';
@@ -29,9 +29,9 @@ export default function AdvertisementBanner({
     useEffect(() => {
         const fetchAds = async () => {
             try {
-                const response = await api.get('/ads');
-                if (response.data && response.data.length > 0) {
-                    const bannerAds = response.data.filter((ad: any) => ad.type === 'banner' && ad.isActive);
+                const data = await getAds();
+                if (data && data.length > 0) {
+                    const bannerAds = data.filter((ad: any) => ad.type === 'banner' && ad.isActive);
                     if (bannerAds.length > 0) {
                         setAds(bannerAds);
                     }
@@ -48,7 +48,7 @@ export default function AdvertisementBanner({
         if (!message) {
             const interval = setInterval(() => {
                 setCurrentMessage((prev) => (prev + 1) % count);
-            }, 5000);
+            }, 6000);
             return () => clearInterval(interval);
         }
     }, [message, ads.length]);
@@ -65,39 +65,36 @@ export default function AdvertisementBanner({
 
     const animationClass = {
         scroll: 'animate-horizontal-scroll',
-        blink: 'animate-blink-fast',
+        blink: 'animate-pulse', // Replaced blink-fast with pulse for smoother feel
         pulse: 'animate-pulse'
     };
 
     return (
-        <div className={`relative overflow-hidden ${variantStyles[variant === 'accent' ? 'orange' : variant]} py-2.5 w-full shadow-lg border-y border-white/10 z-30`}>
-            {/* Animated Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.1)_10px,rgba(255,255,255,0.1)_20px)]" />
+        <div className={`relative overflow-hidden ${variantStyles[variant === 'accent' ? 'orange' : variant]} py-2 w-full shadow-md border-y border-white/5 z-30 transform-gpu`}>
+            {/* Animated Background Pattern - Simplified */}
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(255,255,255,0.1)_20px,rgba(255,255,255,0.1)_40px)]" />
             </div>
 
             {/* Scrolling Content */}
             <div className="relative flex items-center overflow-hidden">
-                <div className={`flex items-center gap-12 whitespace-nowrap ${animation === 'scroll' ? 'animate-horizontal-scroll' : animationClass[animation]}`}>
-                    {/* Repeat the message multiple times for seamless scroll */}
-                    {[...Array(8)].map((_, index) => (
+                <div className={`flex items-center gap-16 whitespace-nowrap ${animation === 'scroll' ? 'animate-horizontal-scroll' : animationClass[animation]}`}>
+                    {/* Reduced to 4 repeats for better performance while maintaining seamlessness */}
+                    {[...Array(4)].map((_, index) => (
                         <a
                             key={index}
                             href={displayLink}
-                            className="flex items-center gap-4 font-black text-[11px] md:text-sm tracking-widest uppercase hover:scale-105 transition-all duration-300 cursor-pointer group"
+                            className="flex items-center gap-6 font-bold text-[10px] md:text-xs tracking-[0.15em] uppercase hover:scale-[1.02] transition-transform duration-300 cursor-pointer group"
                         >
-                            <Sparkles className="w-4 h-4 text-yellow-200 animate-spin-slow" />
-                            <span className="group-hover:text-yellow-100 transition-colors drop-shadow-md">{displayMessage}</span>
-                            <TrendingUp className="w-4 h-4 group-hover:translate-x-1 transition-transform opacity-70" />
-                            <Zap className="w-4 h-4 text-white animate-pulse" />
+                            <Sparkles className="w-3.5 h-3.5 text-yellow-200" />
+                            <span className="group-hover:text-yellow-100 transition-colors">{displayMessage}</span>
+                            <TrendingUp className="w-3.5 h-3.5 opacity-50" />
+                            <Zap className="w-3.5 h-3.5 text-white" />
                         </a>
                     ))}
                 </div>
             </div>
-
-            {/* Glowing edges overlay */}
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black/10 to-transparent pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black/10 to-transparent pointer-events-none" />
         </div>
     );
 }
+

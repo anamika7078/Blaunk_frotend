@@ -28,7 +28,26 @@ export default function GourmetPatisserieSection() {
   }, []);
 
   if (loading) {
-    return <div className="p-20 text-center">Loading Gourmet Treats...</div>;
+    return (
+      <section className="relative rounded-[40px] my-10 overflow-hidden bg-gray-50 p-14">
+        <div className="flex flex-col md:flex-row justify-between gap-6 mb-12">
+          <div className="space-y-4">
+            <div className="h-4 w-32 bg-gray-200 animate-pulse rounded" />
+            <div className="h-12 w-64 bg-gray-200 animate-pulse rounded" />
+            <div className="h-6 w-96 bg-gray-200 animate-pulse rounded" />
+          </div>
+          <div className="h-14 w-48 bg-gray-200 animate-pulse rounded-2xl" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="bg-white rounded-[40px] p-5 pb-8 space-y-4">
+              <div className="aspect-square bg-gray-100 animate-pulse rounded-[32px]" />
+              <div className="h-8 w-3/4 bg-gray-50 animate-pulse rounded mx-auto" />
+            </div>
+          ))}
+        </div>
+      </section>
+    );
   }
 
   return (
@@ -43,22 +62,22 @@ export default function GourmetPatisserieSection() {
         />
       </div>
 
-      <div className="relative z-10 p-8 md:p-14">
+      <div className="relative z-10 p-6 sm:p-8 md:p-14">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 sm:mb-12">
           <div className="max-w-2xl">
-            <p className="text-[10px] text-[#E84C89] font-black uppercase tracking-[0.4em] mb-4">
+            <p className="text-[9px] sm:text-[10px] text-[#E84C89] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 text-center md:text-left">
               Gourmet Patisserie
             </p>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#222] leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#222] leading-tight mb-4 text-center md:text-left">
               Blaunk <span className="text-[#E84C89]">Cakes</span> & Bakes
             </h2>
-            <p className="text-gray-500 text-sm md:text-xl font-medium max-w-lg opacity-80 italic">
+            <p className="text-gray-500 text-sm sm:text-base md:text-xl font-medium max-w-lg mx-auto md:mx-0 opacity-80 italic text-center md:text-left">
               Indulge in our handcrafted range of designer cakes, pastries, and sweet treats.
             </p>
           </div>
 
-          <button className="bg-[#E84C89] text-white px-8 py-4 rounded-2xl font-bold text-xs flex items-center gap-3 hover:bg-[#d43d78] transition-all shadow-xl shadow-[#E84C89]/30 self-start group animate-gpu">
+          <button className="w-full sm:w-auto bg-[#E84C89] text-white px-8 py-4 rounded-2xl font-bold text-xs flex items-center justify-center gap-3 hover:bg-[#d43d78] transition-all shadow-xl shadow-[#E84C89]/30 self-center md:self-start group animate-gpu">
             <LayoutGrid size={18} className="group-hover:rotate-90 transition-transform duration-300" />
             <span className="uppercase tracking-widest">Explore Full Menu</span>
           </button>
@@ -85,23 +104,10 @@ export default function GourmetPatisserieSection() {
               </div>
 
               {/* Content */}
-              <div className="px-3 flex flex-col gap-3">
-                <h3 className="text-2xl font-black text-[#222] group-hover:text-[#E84C89] transition-colors leading-tight tracking-tight">
+              <div className="px-3 flex flex-col gap-3 pb-4">
+                <h3 className="text-2xl font-black text-[#222] group-hover:text-[#E84C89] transition-colors leading-tight tracking-tight text-center">
                   {item.name}
                 </h3>
-
-                <div className="flex items-center justify-between mt-4">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Starting from</span>
-                    <p className="text-[#E84C89] font-black text-2xl tracking-tighter">
-                      ${item.price}.00
-                    </p>
-                  </div>
-
-                  <button className="bg-[#FFF0F5] p-4 rounded-[20px] text-[#E84C89] hover:bg-[#E84C89] hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg group/btn">
-                    <ShoppingBag size={24} className="group-hover/btn:scale-110 transition-transform" />
-                  </button>
-                </div>
               </div>
             </div>
           ))}

@@ -17,19 +17,19 @@ export default function BlaunkStoreSection() {
       />
 
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-6 p-6 border-2 border-dashed border-[#a38a44]/30 rounded-2xl mb-12 bg-[#fdfaf3]">
-        <div className="flex items-center gap-4">
-          <div className="p-3 bg-[#a38a44] rounded-xl text-white shadow-lg animate-bounce">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-6 p-5 sm:p-6 border-2 border-dashed border-[#a38a44]/30 rounded-2xl mb-8 sm:mb-12 bg-[#fdfaf3]">
+        <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div className="p-3 bg-[#a38a44] rounded-xl text-white shadow-lg hidden sm:block">
             <House size={32} />
           </div>
           <div>
-            <h2 className="text-3xl md:text-5xl font-black text-[#1f2918] tracking-tight text-center lg:text-left">BLAUNK STORE</h2>
-            <p className="text-[#a38a44] font-bold text-xs uppercase tracking-widest mt-1 text-center lg:text-left">Your Local Marketplace, Global Reach</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1f2918] tracking-tight">BLAUNK STORE</h2>
+            <p className="text-[#a38a44] font-bold text-[10px] sm:text-xs uppercase tracking-widest mt-1">Your Local Marketplace, Global Reach</p>
           </div>
         </div>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="group bg-[#a38a44] text-white px-8 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-[0_20px_40px_-15px_rgba(163,138,68,0.5)] hover:scale-105 transition-all duration-300 whitespace-nowrap flex items-center gap-3"
+          className="w-full lg:w-auto group bg-[#a38a44] text-white px-6 sm:px-8 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] shadow-[0_20px_40px_-15px_rgba(163,138,68,0.5)] hover:scale-105 transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-3"
         >
           Register Your Shop
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -39,7 +39,7 @@ export default function BlaunkStoreSection() {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
         {/* Left Ad Column */}
-        <div className="relative h-[450px] lg:h-auto rounded-2xl overflow-hidden group shadow-xl border-4 border-transparent animate-ad-border">
+        <div className="relative h-[450px] lg:h-auto rounded-2xl overflow-hidden group shadow-xl border-4 border-transparent">
           <img
             src="https://images.unsplash.com/photo-1601333144130-8cbb312386b6?q=80&w=1974&auto=format&fit=crop"
             alt="Store Advertisement"
@@ -50,7 +50,7 @@ export default function BlaunkStoreSection() {
 
           {/* Advertisement Tags */}
           <div className="absolute top-4 left-4 flex flex-col gap-2 z-20">
-            <div className="bg-red-600 text-white text-[10px] font-black px-2 py-1 rounded animate-blink-fast shadow-lg w-fit">
+            <div className="bg-red-600 text-white text-[10px] font-black px-2 py-1 rounded animate-blink-soft shadow-lg w-fit">
               LIVE DEALS
             </div>
             <div className="bg-white/20 backdrop-blur-md text-white text-[8px] font-bold px-2 py-0.5 rounded border border-white/30 uppercase tracking-widest w-fit">
@@ -59,7 +59,7 @@ export default function BlaunkStoreSection() {
           </div>
 
           <div className="absolute inset-x-0 bottom-0 p-8 text-white z-10">
-            <h3 className="text-4xl font-black mb-2 leading-none italic animate-text-glow">LOCAL <br /> GEMS</h3>
+            <h3 className="text-4xl font-black mb-2 leading-none italic">LOCAL <br /> GEMS</h3>
             <p className="text-xs mb-6 font-medium text-gray-300 leading-relaxed">Discover verified shops in your city with <span className="text-[#d2a437] font-bold">Exclusive Discounts</span>.</p>
             <button className="w-full bg-[#d2a437] text-white py-4 rounded-xl font-black text-xs hover:bg-white hover:text-[#a38a44] transition-all duration-300 uppercase tracking-widest shadow-2xl border-2 border-transparent hover:border-[#d2a437]">
               Explore Now
@@ -109,7 +109,7 @@ export default function BlaunkStoreSection() {
                   <p className="text-xs text-gray-500 mt-1 mb-4 font-medium italic">{item.sub}</p>
 
                   <div className="bg-[#fdfaf3] border border-[#a38a44]/20 rounded-xl p-3 text-[11px] text-[#7a6834] font-bold mb-5 flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#a38a44] animate-pulse" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#a38a44]" />
                     {item.offer}
                   </div>
 

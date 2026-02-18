@@ -32,7 +32,7 @@ export default function CuratedCollectionsSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
 
-        <div className="relative h-[350px] rounded-xl overflow-hidden group shadow-xl border-3 border-transparent animate-ad-border">
+        <div className="relative h-[350px] rounded-xl overflow-hidden group shadow-xl border-3 border-transparent">
           <img
             src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop"
             alt="Boutique Advertisement"
@@ -42,7 +42,7 @@ export default function CuratedCollectionsSection() {
 
           {/* Advertisement Tags */}
           <div className="absolute top-4 left-4 flex flex-col gap-2 z-20">
-            <div className="bg-[#d2a437] text-black text-[10px] font-black px-2 py-1 rounded animate-blink-fast shadow-lg inline-block w-fit">
+            <div className="bg-[#d2a437] text-black text-[10px] font-black px-2 py-1 rounded animate-blink-soft shadow-lg inline-block w-fit">
               TRENDING NOW
             </div>
             <div className="bg-white/20 backdrop-blur-md text-white text-[8px] font-bold px-2 py-0.5 rounded border border-white/30 uppercase tracking-widest w-fit">
@@ -51,7 +51,7 @@ export default function CuratedCollectionsSection() {
           </div>
 
           <div className="relative z-10 h-full p-6 flex flex-col justify-end">
-            <h3 className="text-4xl font-black text-white leading-tight mb-2 italic tracking-tighter animate-text-glow">
+            <h3 className="text-4xl font-black text-white leading-tight mb-2 italic tracking-tighter">
               FASHION <br /> EVOLUTION
             </h3>
             <p className="text-gray-200 text-xs mb-5 font-medium opacity-90">

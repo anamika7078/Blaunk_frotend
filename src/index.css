@@ -28,17 +28,15 @@
   0%,
   100% {
     opacity: 1;
-    transform: scale(1);
   }
 
   50% {
-    opacity: 0.3;
-    transform: scale(1.1);
+    opacity: 0.6;
   }
 }
 
-.animate-blink-fast {
-  animation: blink 0.5s infinite ease-in-out;
+.animate-blink-soft {
+  animation: blink 2s infinite ease-in-out;
 }
 
 @keyframes flash-border {
@@ -89,7 +87,8 @@
 }
 
 .animate-horizontal-scroll {
-  animation: horizontal-scroll 20s linear infinite;
+  animation: horizontal-scroll 30s linear infinite;
+  will-change: transform;
 }
 
 /* Slow Spin Animation */

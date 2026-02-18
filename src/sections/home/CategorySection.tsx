@@ -14,16 +14,13 @@ const categories = [
 
 export default function CategorySection() {
   return (
-    <section className="md:p-10">
-
-
-
-      <div className="flex justify-between items-center mb-8">
+    <section className="p-4 sm:p-10">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 text-center md:text-left">
         <div>
-          <p className="text-sm text-[#7b8464] font-semibold">
+          <p className="text-[10px] sm:text-xs text-[#7b8464] font-black uppercase tracking-[0.2em] mb-2">
             A SERVICE TO EVERY INDIAN MARKET PLACE
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold mt-2 text-[#111]">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-black mt-2 text-[#111] leading-tight max-w-4xl mx-auto md:mx-0">
             Indian BIZ Registered Market Place. Direct Source From Manufacturer & Wholesaler
           </h2>
         </div>
@@ -40,12 +37,12 @@ export default function CategorySection() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-          <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse shadow-lg z-20">
+          <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
             LIVE NOW
           </div>
 
           <div className="relative z-10 p-6 text-center">
-            <div className="inline-block bg-[#d2a437] text-[#1f2918] text-xs font-black px-3 py-1 rounded mb-2 animate-bounce">
+            <div className="inline-block bg-[#d2a437] text-[#1f2918] text-xs font-black px-3 py-1 rounded mb-2">
               LIMITED TIME DEAL
             </div>
             <h3 className="text-3xl font-black text-white leading-tight mb-2 drop-shadow-md">
